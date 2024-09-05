@@ -3,19 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
     <title>Lift Simulation</title>
 </head>
 <body>
-    <form>
-        <label for="floor">Number of Floors</label>
-        <input type="number" id="floor"  placeholder="No of Floors">   
-        <label for="lift">Number of Lifts</label>
-        <input type="number"  id="lift">
-        <button onclick="onSubmit()">Submit</button>
+    <form id="inputform" action="main.html" onsubmit="return CheckPM()" class="container" >
+        <br>
+        <label for="floors">Number of Floors</label> <br>
+        <input type="number" id="floors"  name="floors" placeholder="Floors" min="0" value="4" required>  <br> 
+        <label for="lifts">Number of Lifts</label>
+        <input type="number"  id="lifts" name="lifts" placeholder="Lifts    " min="0" value="2" required> <br>
+        <button onclick=" generateUI() ">Generate</button>
     </form>
 
-    <div id="mechanics"></div>
+    <script>
+        function CheckPM(){
+            let floors,lifts;
+            floors = document.getElementById("floors").value;
+            lifts = document.getElementById("lifts").value;
 
-    <script src="LiftSim.js"></script>
+            let IsTrue = true;
+
+            if (floors < 1 || lifts < 1) {
+                alert("Enter Number of Floors/Lifts Greater than zero");
+                IsTrue = false;
+            } 
+
+
+            if(isNaN(floors) || isNaN(lifts)){
+                alert("Enter Number of Floors/Lifts Greater than zero");
+                IsTrue = false;
+            }
+
+            return IsTrue;
+        }
+    </script>
+
+    
 </body>
 </html>
