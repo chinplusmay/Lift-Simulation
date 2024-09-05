@@ -1,0 +1,151 @@
+body{
+    margin: 1rem;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: purple  
+}
+
+
+.container {
+    display: flex;
+    color: black;
+    flex-direction: row;
+    width: 65%;
+    justify-content: center;
+    margin: 6rem auto;
+    padding: 2px;
+    border-radius: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+button{
+    color: rgb(21, 21, 21);
+    background-color: chartreuse;
+    font-size: 1rem;
+    margin: 1rem;
+    width: 15%;
+}
+
+label {
+    font-weight: bold;
+    margin: 1rem;
+    width: 14%;
+}
+
+
+
+
+
+.header, .app_link{
+    font-style: normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+    
+.app_link{
+    text-decoration: none;
+    color:chocolate;
+    font-size: 35px;
+}
+
+.app_link:hover{
+    color: aquamarine;
+}
+
+
+
+#maindiv {
+    width: 100%;
+    overflow-x: auto;
+    background-color: greenyellow;
+    min-width: 100%;
+    height: fit-content;
+    min-height: 100%;
+}
+
+.subelements {
+    display: inline-flex;
+    background-color: beige;
+    height: 100px;
+    margin-bottom: 20px;
+    
+    box-sizing: border-box;
+    min-width: 100%;
+}
+
+
+#maindiv {
+    display: inline-flex;
+    flex-direction: column;
+    width: max-content;
+}
+
+.floorname {
+    background-color: darkviolet;
+    color: black;
+    width: 8vw;
+    min-width: 40px;
+    height: 100%;
+    font-size: 2vw;
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1vw;
+    
+}
+
+button:disabled {
+    background-color: light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+    color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+    border-color: light-dark(rgb(255, 0, 0), rgba(195, 195, 195, 0.3));
+}
+
+.upbutton, .downbutton {
+    width: 77px;
+    background-color: aqua;
+    height: 40px;
+    margin: -7px 0;
+}
+
+.lift {
+    display: inline-flex;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    background-color: rgb(255, 255, 255);
+    width: 6vw;
+    min-width: 60px;
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.lift-door-left, .lift-door-right {
+    flex: 1;
+    width: 50%;
+    
+    overflow: hidden;
+}
+
+.lift-door-left {
+    background-color: rgb(119, 106, 106);
+    left: 0;
+    transform-origin: left center;
+}
+
+.lift-door-right {
+    background-color: rgb(68, 58, 58);
+    right: 0;
+    transform-origin: right center;
+}
+    
+
