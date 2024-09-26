@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-/*REST CSS*/
-
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +12,10 @@ html {
 }
 
 
-
 body {
     font-size: 1.6rem;
 }
+
 /*CSS VARIABLES*/
 :root {
     --PRIMARY-COLOR: #06283D;
@@ -39,6 +37,12 @@ body {
         min-height: 100vh;
 }
 
+.heading {
+    text-align: center;
+    margin: 1rem 1rem 4rem;
+    color: var(--PRIMARY-COLOR);
+}
+
 .input-container {
     margin: 0 auto;
     display: flex;
@@ -50,24 +54,19 @@ body {
         border-radius: 5px;
     }
 
-.heading {
-    text-align: center;
-    margin: 1rem 1rem 4rem;
-    color: var(--PRIMARY-COLOR);
-}
-
 .form-container {
-    width: 50vw;
     padding-top: 2rem;
+    width: 50vw;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--INPUT-SECTION-BG-COLOR);
-    border: 1px solid var(--INPUT-SECTION-BORDER-COLOR);
     margin: 0 auto;
-    min-width: 30rem;
+    border: 1px solid var(--INPUT-SECTION-BORDER-COLOR);
     max-width: 70rem;
-}
+    min-width: 30rem;
+}    
+
 .inputs {
     border-radius: 5px;
     border: 2px solid var(--PRIMARY-COLOR);
@@ -88,102 +87,115 @@ body {
     align-self: flex-start;
     margin-left: 1.6rem;
 }
-.btn-primary{
-    background-color: var(--PRIMARY-COLOR);
-    color: var(--VERY-LIGHT-COLOR);
+
+
+.button-floor{
+    justify-content: left;
+    align-items: flex-start;
+    border: 1px solid;
+    margin: 0px;
+    border-radius:2px;
+    font-size: 10px;
+    padding:5px 5px;
+    margin-bottom: 5px; 
+    display: inline;
+    background-color: aqua;
 }
 
-.btn-primary,
-.btn-up,
-.btn-down {
+.button-floor upBttn:hover{
+    opacity: 1;
+}
+
+
+.generatebutton {
     padding: 1rem;
     margin-top: 2.4rem;
     border: none;
     opacity: .9;
     cursor: pointer;
-}
-
-.btn-primary {
     margin-bottom: 4rem;
 }
-.btn-primary:hover,
-.btn-up:hover,
-.btn-down:hover {
+
+.generatebutton{
+    background-color: var(--PRIMARY-COLOR);
+    color: var(--VERY-LIGHT-COLOR);
+}
+
+.generatebutton:hover {
     opacity: 1;
 }
 
-.btn-up,
-.btn-down {
+.lifts {
+    width: 67px;
+    height: 93px;
+    font-size:0;
+    position: absolute;
+    background-color: var(--VERY-LIGHT-COLOR);
+    left: 0;
+    top:0;
+    border: 2px solid;
+    align-items: center;
     border-radius: 5px;
-    width: 89px;
-    var(--PRIMARY-COLOR);
-    background-color: aqua;
-    height: 40px;
-    margin: 7px 0;
+    content: none;
+    margin: 0 2rem;
 }
 
-/*STYLING FLOORS*/
-.floors {
-    padding-bottom: 4rem;
-    overflow-x: auto;
+.lifts p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-0%, -0%);
 }
 
 .floor {
-    height: 140px;
+    height: 100px;
+    position: relative;
     display: flex;
-    overflow: visible;
-    align-items: center;
-    border-bottom: 4px solid var(--PRIMARY-COLOR);
-    padding: 1rem 2rem .6rem;
-    min-width:2000%;
-}
-
-.floor-number {
-    font-weight: 500;
-    padding-right: 1rem;
-    font-size: 2vw;
-}
-
-.lift-controller{
-    display: flex;
+    min-width:1000%;
     flex-direction: column;
-    justify-content: center;
-    margin-right: 4vw;
-}
-/*STYLING LIFTS*/
-
-.lift {
-    display: flex;
-    align-self: flex-end;
-    margin: 0 2rem;
-    background-color: var(--VERY-LIGHT-COLOR);
-    transition: transform 2s ease-out;
-    overflow: hidden;
-    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom:white 1px dotted;
+    color: black;
+    border-bottom: 2px solid var(--PRIMARY-COLOR);
 }
 
-.lift-left {
-    height: 9.6rem;
-    width: 3.2rem;
+.liftMotion{
+    transition-duration: 2s;
+}
+
+.lifts .gate {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    border: 1px solid var(--PRIMARY-COLOR);
     background-color: var(--LIFT-COLOR);
-    border-radius: 4px 0 0 4px;
-    border: 2px solid var(--PRIMARY-COLOR);
-    transition: transform 2.5s ease-out;
 }
 
-.lift-right {
-    height: 9.6rem;
-    width: 3.2rem;
-    background-color: var(--LIFT-COLOR);
-    border-radius: 0 4px 4px 0;
-    border: 2px solid var(--PRIMARY-COLOR);
-    transition: transform 2.5s ease-out;
+.gateLeft {
+    left: 0;
 }
 
-.open-lift-left {
-    transform: translateX(-100%);
+.gateRight {
+    right: 0;
 }
 
-.open-lift-right {
-    transform: translateX(100%);
+.animateLiftsDoorsOnFloorStop  {
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-name: doorSimulation;
 }
+
+@keyframes doorSimulation {
+    from {
+        width: 50%;
+    }
+    50% {
+        width: 0%;
+    }
+    to {
+        width: 50%;
+    }
+}
+
+	
