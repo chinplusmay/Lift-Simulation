@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lift Simulation</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/main.js" defer></script>
-</head>
+    <link rel="stylesheet" href="src/css/main.css">
+    <script src="src/js/main.js" defer></script>
 
+
+    <title>Lift Simulation</title>
+    
+</head>
 <body>
     <main class="main">
         <h1 class="heading">Lift Simulation</h1>
-        </div>
         <section class="form-container" id="input-container">
-            <div class="input-container">
-                <label id="no-of-lifts">Enter Number of floors : </label>
-                <input class="inputs" id="input-floors" type="number" min="1" placeholder="Enter no of floors"></input>
-                <label id="no-of-lifts">Enter Number of lifts : </label>
-                <input class="inputs" id="input-lifts" type="number" for="no-of-lifts" min="1"
-                    placeholder="Enter no of lifts"></input>
-                <button class="btn-primary" id="btn-generate">Generate</button>
-            </div>
+            <div class="input-container">  
+                <label for="noOfFloors">Enter Number of floors :</label>
+                <input class="inputs"  type="number" autocomplete="off" id="noOfFloors" name="noOfFloors">
+  
+                <label for="noOfLifts">Enter Number of lifts :</label>
+                <input class="inputs" type="number" autocomplete="off"  id="noOfLifts" name="noOfLifts">
 
+
+                <button id="submit" class="generatebutton">Generate</button>
+            </div>        
+
+            
         </section>
     </main>
 
-</body>
+    <div id="simulationArea"></div>
 
+
+</body>
 </html>
